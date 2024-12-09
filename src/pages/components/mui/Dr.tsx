@@ -8,11 +8,10 @@ import TopBar from "../TopBar";
 import { createTheme, PaletteMode, ThemeProvider } from "@mui/material/styles";
 import { useState } from "react";
 import { getDesing } from "../theme";
-
 import Dashboard from "@/pages/dashboard";
 import Team from "@/pages/Team";
-// import Contacts from "@/pages/Contacts/Contacts";
-
+import Contact from "@/pages/Contact/Contact";
+import ProfileFrom from "@/pages/ProfileFrom/ProfileFrom";
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
@@ -39,9 +38,9 @@ export default function MiniDrawer() {
       case "Manga Team":
         return <Team />;
       case "Contacts Informantion":
-        return <Contacts />;
+        return <Contact />;
       case "Profile From":
-        return <Typography variant="h4">"Profile Profile" </Typography>;
+        return  <ProfileFrom/>;
       case "Calender":
         return <Typography variant="h4">"Calender Calender" </Typography>;
       case "FAQ Page":
@@ -73,7 +72,7 @@ export default function MiniDrawer() {
           component="main"
           sx={{ flexGrow: 1, p: 3 }}
         >
-          <DrawerHeader />
+          <DrawerHeader   />
           <Box>{renderContent()}</Box>
         </Box>
       </Box>
