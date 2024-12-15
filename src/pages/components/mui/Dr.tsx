@@ -12,6 +12,11 @@ import Dashboard from "@/pages/dashboard";
 import Team from "@/pages/Team";
 import Contact from "@/pages/Contact/Contact";
 import ProfileFrom from "@/pages/ProfileFrom/ProfileFrom";
+import Calender from "@/pages/Calender/Calender";
+import BarChart from "@/pages/barChart/BarChart";
+import PieChart from "@/pages/pieChart/PieChart";
+import LineChart from "@/pages/lineChart/LineChart";
+import FAQ from "@/pages/faqPage/FAQ";
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
@@ -40,17 +45,17 @@ export default function MiniDrawer() {
       case "Contacts Informantion":
         return <Contact />;
       case "Profile From":
-        return  <ProfileFrom/>;
+        return <ProfileFrom />;
       case "Calender":
-        return <Typography variant="h4">"Calender Calender" </Typography>;
+        return <Calender />;
       case "FAQ Page":
-        return <Typography variant="h4">FAQ Page </Typography>;
+        return <FAQ />;
       case "Bar Chart":
-        return <Typography variant="h4">Bar Bar Chart Page </Typography>;
+        return <BarChart />;
       case "Pie Chart":
-        return <Typography variant="h4">Pie Chart </Typography>;
+        return <PieChart />;
       case "Line Chart":
-        return <Typography variant="h4"> Line Chart </Typography>;
+        return <LineChart />;
     }
   };
 
@@ -72,7 +77,7 @@ export default function MiniDrawer() {
           component="main"
           sx={{ flexGrow: 1, p: 3 }}
         >
-          <DrawerHeader   />
+          <DrawerHeader />
           <Box>{renderContent()}</Box>
         </Box>
       </Box>

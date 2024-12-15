@@ -96,6 +96,7 @@ const Array2 = [
 const Array3 = [
   { text: "Bar Chart", icon: <StackedBarChartOutlinedIcon />, path: "/" },
   { text: "Pie Chart", icon: <PieChartOutlinedIcon />, path: "/" },
+  { text: "Line Chart", icon: <TimelineOutlinedIcon />, path: "/" },
 ];
 
 const SideBar: React.FC<SideMenuProps> = ({
