@@ -1,18 +1,27 @@
 import React from "react";
-import { DataGrid } from "@mui/x-data-grid";
+import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { Box, useTheme, Typography } from "@mui/material";
 import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
 import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
-import { rows } from "./data";
-const Team = () => {
+import { rows } from "../../lib/dataTeam";
+interface RowData {
+  id: number;
+  Name: string;
+  Email: string;
+  Age: number;
+  Phone: string;
+  access: "Admin" | "User" | "Manager";
+}
+
+const Team: React.FC = () => {
   const theme = useTheme();
 
-  const columns = [
+  // تعريف أعمدة الجدول مع النوع GridColDef
+  const columns: GridColDef[] = [
     {
       field: "id",
       headerName: "ID",
-
       headerAlign: "center",
       align: "center",
     },
@@ -25,7 +34,7 @@ const Team = () => {
     },
     {
       field: "Email",
-      headerName: "ُEmail",
+      headerName: "Email",
       flex: 1,
       headerAlign: "center",
       align: "center",
@@ -50,7 +59,8 @@ const Team = () => {
       flex: 1,
       headerAlign: "center",
       align: "center",
-      renderCell: ({ row: { access } }) => {
+      renderCell: params => {
+        const access = params.row.access as RowData["access"];
         return (
           <Box
             sx={{
@@ -98,6 +108,7 @@ const Team = () => {
       },
     },
   ];
+
   return (
     <div style={{ height: 600, width: "100%" }}>
       <DataGrid

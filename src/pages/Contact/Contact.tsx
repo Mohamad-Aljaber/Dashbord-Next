@@ -1,6 +1,6 @@
 import React from "react";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import { columns, rows } from "./data";
+import { columns, rows } from "../../lib/dataContact";
 
 const Contacts: React.FC = () => {
   return (

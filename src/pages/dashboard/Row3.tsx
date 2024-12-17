@@ -1,7 +1,7 @@
 import { Box, Paper, Stack, Typography, useTheme } from "@mui/material";
 import React from "react";
 import { Pie } from "react-chartjs-2";
-import { data2 } from "./data";
+import { data2 } from "../../lib/dataDashboard";
 import BarChart from "../barChart/BarChart";
 
 const Row3 = () => {

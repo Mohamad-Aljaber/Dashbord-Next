@@ -9,7 +9,7 @@ import {
 import React from "react";
 import LineChart from "../lineChart/LineChart";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
-import { mockTransactions } from "./data";
+import { mockTransactions } from "../../lib/dataDashboard";
 const Row2 = () => {
   const theme = useTheme();
   return (

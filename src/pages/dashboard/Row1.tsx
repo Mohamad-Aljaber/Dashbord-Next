@@ -5,7 +5,7 @@ import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import PersonAddAlt1OutlinedIcon from "@mui/icons-material/PersonAddAlt1Outlined";
 import TrafficOutlinedIcon from "@mui/icons-material/TrafficOutlined";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { data1, data2, data3, data4 } from "./data";
+import { data1, data2, data3, data4 } from "../../lib/dataDashboard";
 import Card from "../components/Card";
 
 ChartJS.register(ArcElement, Tooltip, Legend);

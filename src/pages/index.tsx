@@ -1,7 +1,7 @@
 import Head from "next/head";
 import * as React from "react";
 import { createTheme, PaletteMode, ThemeProvider } from "@mui/material/styles";
-import { getDesing } from "./components/theme";
+import { getDesing } from "../lib/theme";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
