@@ -23,7 +23,7 @@ ChartJS.register(
   Legend
 );
 
-const BarChart: React.FC = () => {
+const BarChart = ({ isDashboard = false }) => {
   const theme = useTheme();
   const data: ChartData<"bar"> = {
     labels: ["2019", "2020", "2021", "2022", "2023", "2024"],
@@ -57,6 +57,7 @@ const BarChart: React.FC = () => {
     plugins: {
       legend: {
         position: "right",
+
         labels: {
           color: theme.palette.text.primary,
         },
@@ -95,7 +96,7 @@ const BarChart: React.FC = () => {
   return (
     <Box
       sx={{
-        height: "80vh",
+        height: isDashboard ? "350px" : "80vh",
         width: "100%",
         display: "flex",
         justifyContent: "center",

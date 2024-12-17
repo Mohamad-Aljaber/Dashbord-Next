@@ -26,9 +26,8 @@ interface AppBarProps extends MuiAppBarProps {
 interface TopBarProp {
   open: boolean;
   handleDrawerOpen: () => void;
-  setMode: PaletteMode;
+  setMode: React.Dispatch<React.SetStateAction<PaletteMode>>;
 }
-
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: prop => prop !== "open",
 })<AppBarProps>(({ theme }) => ({

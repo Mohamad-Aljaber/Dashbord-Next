@@ -1,4 +1,17 @@
-export const columns = [
+import { GridColDef } from "@mui/x-data-grid";
+
+interface RowData {
+  id: number;
+  registerId: string;
+  Name: string;
+  Age: number;
+  PhoneNumber: number;
+  Email: string;
+  Address: string;
+  City: string;
+  ZipCode: string;
+}
+export const columns: GridColDef[] = [
   {
     field: "id",
     headerName: "ID",
@@ -62,7 +75,7 @@ export const columns = [
     align: "center",
   },
 ];
-export const rows = [
+export const rows: RowData[] = [
   {
     id: 1,
     registerId: "REG001",

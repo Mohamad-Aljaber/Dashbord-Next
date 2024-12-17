@@ -4,7 +4,7 @@ import { Box, useTheme, Typography } from "@mui/material";
 import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
 import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
-import { rows } from "./team";
+import { rows } from "./data";
 const Team = () => {
   const theme = useTheme();
 

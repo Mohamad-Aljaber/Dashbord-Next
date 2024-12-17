@@ -2,8 +2,7 @@ import React from "react";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { columns, rows } from "./data";
 
-
-const Contacts = () => {
+const Contacts: React.FC = () => {
   return (
     <div style={{ height: 600, width: "100%" }}>
       <DataGrid
@@ -15,5 +14,4 @@ const Contacts = () => {
     </div>
   );
 };
-
 export default Contacts;

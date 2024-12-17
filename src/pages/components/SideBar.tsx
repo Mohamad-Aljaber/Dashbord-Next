@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Avatar,
   CSSObject,
@@ -34,7 +34,7 @@ const drawerWidth = 250;
 interface SideMenuProps {
   open: boolean;
   handleDrawerClose: () => void;
-  setHandleSection: string;
+  setHandleSection: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const openedMixin = (theme: Theme): CSSObject => ({

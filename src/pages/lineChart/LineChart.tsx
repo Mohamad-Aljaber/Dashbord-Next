@@ -35,7 +35,7 @@ const options = {
   },
 };
 
-const LineChart = () => {
+const LineChart = ({ isDashboard = false }) => {
   const theme = useTheme();
   const labels = [
     "January",
@@ -74,7 +74,7 @@ const LineChart = () => {
   return (
     <Box
       sx={{
-        height: "80vh",
+        height: isDashboard ? "400px" : "80vh",
         width: "100%",
         display: "flex",
         justifyContent: "center",
