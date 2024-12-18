@@ -7,7 +7,7 @@ import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import { useState } from "react";
 import Dashboard from "@/pages/dashboard/Dashboard";
-import Team from "@/pages/team";
+import Team from "@/pages/team/Team";
 import Contact from "@/pages/contact/Contact";
 import ProfileFrom from "@/pages/profileFrom/ProfileFrom";
 import Calender from "@/pages/calender/Calender";

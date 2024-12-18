@@ -17,7 +17,6 @@ interface RowData {
 const Team: React.FC = () => {
   const theme = useTheme();
 
-  // تعريف أعمدة الجدول مع النوع GridColDef
   const columns: GridColDef[] = [
     {
       field: "id",
