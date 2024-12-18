@@ -6,17 +6,17 @@ import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import { useState } from "react";
-import TopBar from "./components/TopBar";
-import SideBar from "./components/SideBar";
-import Contact from "./contact/Contact";
-import FAQ from "./faqPage/FAQ";
-import Dashboard from "./dashboard/Dashboard";
-import Team from "./team/Team";
-import ProfileFrom from "./profileFrom/ProfileFrom";
-import BarChart from "./barChart/BarChart";
-import PieChart from "./pieChart/PieChart";
-import LineChart from "./lineChart/LineChart";
-import Calender from "./calender/Calender"
+import TopBar from "../components/TopBar";
+import SideBar from "../components/SideBar";
+import Contact from "../components/contact/Contact";
+import FAQ from "../components/faqPage/FAQ";
+import Dashboard from "../components/dashboard/Dashboard";
+import Team from "../components/team/Team";
+import ProfileFrom from "../components/profileFrom/ProfileFrom";
+import BarChart from "../components/barChart/BarChart";
+import PieChart from "../components/pieChart/PieChart";
+import LineChart from "../components/lineChart/LineChart";
+import Calender from "../components/calender/Calender";
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",

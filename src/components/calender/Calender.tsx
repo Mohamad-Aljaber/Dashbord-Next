@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { EventApi, EventClickArg, EventContentArg, formatDate } from "@fullcalendar/core";
+import {
+  EventApi,
+  EventClickArg,
+  EventContentArg,
+  formatDate,
+} from "@fullcalendar/core";
 // import FullCalendar, { EventClickArg, EventContentArg, EventApi } from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
@@ -122,7 +127,7 @@ const CalendarApp: React.FC = () => {
             label="Event Title"
             fullWidth
             value={newEventTitle}
-            onChange={(e) => setNewEventTitle(e.target.value)}
+            onChange={e => setNewEventTitle(e.target.value)}
           />
         </DialogContent>
         <DialogActions>
@@ -156,7 +161,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentEvents }) => (
       All Events ({currentEvents.length})
     </Typography>
     <ul>
-      {currentEvents.map((event) => (
+      {currentEvents.map(event => (
         <SidebarEvent
           key={event.id}
           event={event}
