@@ -6,17 +6,17 @@ import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import { useState } from "react";
-import Dashboard from "@/pages/dashboard/Dashboard";
-import Team from "@/pages/team/Team";
-import Contact from "@/pages/contact/Contact";
-import ProfileFrom from "@/pages/profileFrom/ProfileFrom";
-import Calender from "@/pages/calender/Calender";
-import BarChart from "@/pages/barChart/BarChart";
-import PieChart from "@/pages/pieChart/PieChart";
-import LineChart from "@/pages/lineChart/LineChart";
-import FAQ from "@/pages/faqPage/FAQ";
 import TopBar from "./components/TopBar";
 import SideBar from "./components/SideBar";
+import Contact from "./contact/Contact";
+import FAQ from "./faqPage/FAQ";
+import Dashboard from "./dashboard/Dashboard";
+import Team from "./team/Team";
+import ProfileFrom from "./profileFrom/ProfileFrom";
+import BarChart from "./barChart/BarChart";
+import PieChart from "./pieChart/PieChart";
+import LineChart from "./lineChart/LineChart";
+import Calender from "./calender/Calender"
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
