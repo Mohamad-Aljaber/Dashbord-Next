@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { formatDate } from "@fullcalendar/core";
-import FullCalendar from "@fullcalendar/react";
+import { EventApi, EventClickArg, EventContentArg, formatDate } from "@fullcalendar/core";
+// import FullCalendar, { EventClickArg, EventContentArg, EventApi } from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
+import FullCalendar from "@fullcalendar/react";
 import interactionPlugin from "@fullcalendar/interaction";
 import { INITIAL_EVENTS, createEventId } from "../../lib/event-utils";
 import {
@@ -19,21 +20,29 @@ import {
   Paper,
 } from "@mui/material";
 
-const CalendarApp = () => {
-  const [currentEvents, setCurrentEvents] = useState([]);
-  const [isDialogOpen, setDialogOpen] = useState(false);
-  const [newEventTitle, setNewEventTitle] = useState("");
-  const [selectedEventInfo, setSelectedEventInfo] = useState(null);
+interface SidebarProps {
+  currentEvents: EventApi[];
+}
 
-  const handleDateSelect = selectInfo => {
+interface SidebarEventProps {
+  event: EventApi;
+}
+
+const CalendarApp: React.FC = () => {
+  const [currentEvents, setCurrentEvents] = useState<EventApi[]>([]);
+  const [isDialogOpen, setDialogOpen] = useState<boolean>(false);
+  const [newEventTitle, setNewEventTitle] = useState<string>("");
+  const [selectedEventInfo, setSelectedEventInfo] = useState<any | null>(null);
+
+  const handleDateSelect = (selectInfo: any) => {
     setSelectedEventInfo(selectInfo);
     setDialogOpen(true);
   };
 
   const handleAddEvent = () => {
-    if (newEventTitle.trim()) {
+    if (newEventTitle.trim() && selectedEventInfo) {
       const calendarApi = selectedEventInfo.view.calendar;
-      calendarApi.unselect();
+      calendarApi.unselect(); // Clear selection
       calendarApi.addEvent({
         id: createEventId(),
         title: newEventTitle,
@@ -46,7 +55,7 @@ const CalendarApp = () => {
     }
   };
 
-  const handleEventClick = clickInfo => {
+  const handleEventClick = (clickInfo: EventClickArg) => {
     if (
       window.confirm(
         `Are you sure you want to delete the event '${clickInfo.event.title}'?`
@@ -56,7 +65,7 @@ const CalendarApp = () => {
     }
   };
 
-  const handleEvents = events => {
+  const handleEvents = (events: EventApi[]) => {
     setCurrentEvents(events);
   };
 
@@ -107,13 +116,13 @@ const CalendarApp = () => {
           },
         }}
       >
-        <DialogTitle>Add New Event </DialogTitle>
+        <DialogTitle>Add New Event</DialogTitle>
         <DialogContent>
           <TextField
             label="Event Title"
             fullWidth
             value={newEventTitle}
-            onChange={e => setNewEventTitle(e.target.value)}
+            onChange={(e) => setNewEventTitle(e.target.value)}
           />
         </DialogContent>
         <DialogActions>
@@ -130,7 +139,7 @@ const CalendarApp = () => {
   );
 };
 
-const Sidebar = ({ currentEvents }) => (
+const Sidebar: React.FC<SidebarProps> = ({ currentEvents }) => (
   <Paper
     sx={{
       lineHeight: "1.5",
@@ -147,7 +156,7 @@ const Sidebar = ({ currentEvents }) => (
       All Events ({currentEvents.length})
     </Typography>
     <ul>
-      {currentEvents.map(event => (
+      {currentEvents.map((event) => (
         <SidebarEvent
           key={event.id}
           event={event}
@@ -157,11 +166,11 @@ const Sidebar = ({ currentEvents }) => (
   </Paper>
 );
 
-const SidebarEvent = ({ event }) => (
+const SidebarEvent: React.FC<SidebarEventProps> = ({ event }) => (
   <li>
     <Typography variant="body2">
       <b>
-        {formatDate(event.start, {
+        {formatDate(event.start || new Date(), {
           year: "numeric",
           month: "short",
           day: "numeric",
@@ -172,23 +181,21 @@ const SidebarEvent = ({ event }) => (
   </li>
 );
 
-function renderEventContent(eventInfo) {
-  return (
-    <Box>
-      <Typography
-        variant="body2"
-        component="b"
-      >
-        {eventInfo.timeText}
-      </Typography>
-      <Typography
-        variant="body2"
-        component="i"
-      >
-        {eventInfo.event.title}
-      </Typography>
-    </Box>
-  );
-}
+const renderEventContent = (eventInfo: EventContentArg) => (
+  <Box>
+    <Typography
+      variant="body2"
+      component="b"
+    >
+      {eventInfo.timeText}
+    </Typography>
+    <Typography
+      variant="body2"
+      component="i"
+    >
+      {eventInfo.event.title}
+    </Typography>
+  </Box>
+);
 
 export default CalendarApp;
